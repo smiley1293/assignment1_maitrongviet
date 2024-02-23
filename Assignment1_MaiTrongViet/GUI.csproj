@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="assets\helvetica-rounded-bold-5871d05ead8de.otf" />
+    <None Remove="assets\Mona-Sans-Black.ttf" />
+    <None Remove="assets\Mona-Sans-Bold.ttf" />
+    <None Remove="assets\Mona-Sans-Light.ttf" />
+    <None Remove="assets\Mona-Sans-LightItalic.ttf" />
+    <None Remove="assets\Mona-Sans-Medium.ttf" />
+    <None Remove="assets\Mona-Sans-MediumItalic.ttf" />
+    <None Remove="assets\Mona-Sans-RegularWide.ttf" />
+    <None Remove="assets\Mona-Sans-SemiBold.ttf" />
+    <None Remove="FontAwesome.otf" />
+    <None Remove="hinh_anh\Login_Background.png" />
+    <None Remove="hinh_anh\Main_BackGround.png" />
+    <None Remove="hinh_anh\Main_BackGround_Staff.png" />
+    <None Remove="hinh_anh\Welcome_Background.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShopSERVICE\ShopSERVICE.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="hinh_anh\Logo_Asm1_nocolor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="hinh_anh\Logo_Asm1_workstyle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="hinh_anh\Logo_Asm1_yellow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\FontAwesome.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\helvetica-rounded-bold-5871d05ead8de.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Mona-Sans-Black.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Mona-Sans-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Mona-Sans-Light.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Mona-Sans-LightItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Mona-Sans-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Mona-Sans-MediumItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Mona-Sans-RegularWide.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Mona-Sans-SemiBold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="hinh_anh\Login_Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="hinh_anh\Main_BackGround.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="hinh_anh\Main_BackGround_Staff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="hinh_anh\Welcome_Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

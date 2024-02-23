@@ -1,0 +1,99 @@
+﻿<Window x:Class="GUI.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="562.5" Width="1000"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen">
+    <Border>
+        
+
+        <Grid>
+            <Button x:Name="close_button" Foreground="#05200e" Background="#ff5347" Content="&#xf177;" FontFamily="./assets/#FontAwesome" HorizontalAlignment="Left" Margin="940,10,0,0" VerticalAlignment="Top" Width="50" Height="25" FontSize="22" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" >
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <TextBox x:Name="txt_Email" Background="#f4ece2" HorizontalAlignment="Left" Height="36" Margin="240,260,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="230" Padding="15,8,0,0">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="18"/>
+                        
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <TextBox Background="#f4ece2" x:Name="txt_Password" HorizontalAlignment="Left" Height="34" Margin="240,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" TextChanged="MyTextbox_TextChanged" Padding="15,8,0,0">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="18"/>
+                        
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Label Foreground="#eeaa47" Content="Email" HorizontalAlignment="Left" Margin="240,223,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.671,0.578" FontSize="20" FontFamily="Mona-Sans-Light"/>
+            <Label Foreground="#eeaa47" Content="Password" HorizontalAlignment="Left" Margin="240,304,0,0" VerticalAlignment="Top" FontFamily="Mona-Sans-SemiBold" FontSize="20"/>
+            <Button x:Name="login_button" Content="Login" HorizontalAlignment="Left" Height="40" Margin="270,418,0,0" VerticalAlignment="Top" Width="150" Click="login_button_Click" FontFamily="Mona-Sans-Light" FontSize="20">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"></Setter>
+                    </Style>
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="White" BorderThickness="1" >
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="White"/>
+                                <Setter Property="Opacity" Value="0.8"/>
+                                <Setter Property="BorderBrush" Value="White"/>
+                                <Setter Property="Foreground" Value="#05200e"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+            </Button>
+
+        </Grid>
+        <Border.Background>
+            <ImageBrush Opacity="1" ImageSource="./hinh_anh/Login_Background.png"></ImageBrush>
+        </Border.Background>
+    </Border>
+    
+
+</Window>
