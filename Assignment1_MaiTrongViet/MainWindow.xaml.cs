@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -81,6 +82,67 @@ namespace Assignment1_MaiTrongViet
         {
 
         }
+        //Check validation
+        private bool ValdateInput()
+        {
+            //id
+            if (string.IsNullOrEmpty(txtID.Text))
+            {
+                MessageBox.Show("Please enter an ID!!!");
+                return false;
+            }
+            if (!Regex.IsMatch(txtID.Text, @"^C\d{3}$"))
+            {
+                MessageBox.Show("The ID format is wrong. Please try agian!!!");
+                txtID.Text = "";
+                return false;   
+            }
+
+            //name
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                MessageBox.Show("Cosmetic's name is invalid. Please try again!!!");
+                return false;
+            }
+            //price
+            if(string.IsNullOrEmpty(txtPrice.Text))
+            {
+                MessageBox.Show("Cosmetic price is invalid. Please try again!!!");
+                return false;
+            }
+            if (!int.TryParse(txtPrice.Text, out _))
+            {
+                MessageBox.Show("Please enter a number!!!");
+                txtPrice.Text = "";
+                return false;
+            }
+            if(int.Parse(txtPrice.Text) <= 0)
+            {
+                MessageBox.Show("Please enter a price more than 0!!!");
+                txtPrice.Text = "";
+                return false;
+            }
+            //quantity
+            if (string.IsNullOrEmpty(txtQuality.Text))
+            {
+                MessageBox.Show("Cosmetic quantity is invalid. Please try again!!!");
+                return false;
+            }
+            if (!int.TryParse(txtQuality.Text, out _))
+            {
+                MessageBox.Show("Please enter a number!!!");
+                txtQuality.Text = "";
+                return false;
+            }
+            if (int.Parse(txtQuality.Text) <= 0)
+            {
+                MessageBox.Show("Please enter a price more than 0!!!");
+                txtQuality.Text = "";
+                return false;
+            }return true;
+
+
+        }
 
         
 
@@ -107,6 +169,10 @@ namespace Assignment1_MaiTrongViet
 
         private void btn_Update_Click(object sender, RoutedEventArgs e)
         {
+            if (!ValdateInput())
+            {
+                return;
+            }
             
             var updatedCosmetic = cosmeticService.GetCosmetic(txtID.Text);
             updatedCosmetic.CosmeticName = txtName.Text;
@@ -130,7 +196,11 @@ namespace Assignment1_MaiTrongViet
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (!ValdateInput())
+            {
+                return;
+            }
+
             Cosmetic cosmetic = new Cosmetic();
             cosmetic.CosmeticId = txtID.Text;
             
@@ -203,7 +273,14 @@ namespace Assignment1_MaiTrongViet
         {
             this.Close();
             WelcomeWindow welcomeWindow = new WelcomeWindow();
-            welcomeWindow.Show();
+            welcomeWindow.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            WelcomeWindow welcomeWindow = new WelcomeWindow();
+            welcomeWindow.Close();
         }
     }
 }

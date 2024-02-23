@@ -61,7 +61,7 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <ComboBox Background="White" x:Name="CategoryID" HorizontalAlignment="Left" Margin="686,539,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="CategoryID_SelectionChanged" Height="30">
+            <ComboBox Background="White" x:Name="CategoryID" HorizontalAlignment="Left" Margin="686,539,0,0" VerticalAlignment="Top" Width="208" SelectionChanged="CategoryID_SelectionChanged" Height="30">
                 <ComboBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -193,7 +193,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <TextBox Background="#fafafa" x:Name="txtSearch" HorizontalAlignment="Left"  Margin="149,44,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="356" TextChanged="txtSearch_TextChanged" Padding="45,14,0,0" Height="50" FontFamily="Mona-Sans Light" FontSize="18">
+            <TextBox Background="#fafafa" x:Name="txtSearch" HorizontalAlignment="Left"   Margin="149,54,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="356" TextChanged="txtSearch_TextChanged" Padding="45,10,0,0" Height="40" FontFamily="Mona-Sans Light" FontSize="18">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="25"/>
@@ -201,7 +201,7 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <TextBlock HorizontalAlignment="Left" Margin="162,54,0,0" TextWrapping="Wrap" Text="&#xf002;" FontFamily="./assets/#FontAwesome" VerticalAlignment="Top" FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="162,58,0,0" TextWrapping="Wrap" Text="&#xf002;" FontFamily="./assets/#FontAwesome" VerticalAlignment="Top" FontSize="30"/>
             <Label Content="Admin System Board" HorizontalAlignment="Left" Margin="351,126,0,0" VerticalAlignment="Top" FontFamily="Helvetica Rounded" FontSize="56"/>
             <Button x:Name="btn_Logout" Foreground="white" HorizontalAlignment="Left" Margin="15,607,0,0" Content="&#xf08b;" FontFamily="./assets/#FontAwesome" VerticalAlignment="Top" FontSize="24" MouseDown="logout_MouseDown" Width="100" Height="30" Click="btn_Logout_Click">
                 <Button.Resources>
@@ -224,10 +224,10 @@
                         </Setter>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                
+
                                 <Setter Property="Opacity" Value="0.8"/>
                                 <Setter Property="BorderBrush" Value="White"/>
-                                
+
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -240,6 +240,31 @@
             <Label Content="Quantity" HorizontalAlignment="Left" Margin="433,508,0,0" VerticalAlignment="Top" FontFamily="Mona-Sans SemiBold" FontSize="16"/>
             <Label Content="Description" HorizontalAlignment="Left" Margin="686,409,0,0" VerticalAlignment="Top" FontFamily="Mona-Sans SemiBold" FontSize="16"/>
             <Label Content="Category" HorizontalAlignment="Left" Margin="686,508,0,0" VerticalAlignment="Top" FontFamily="Mona-Sans SemiBold" FontSize="16"/>
+            <Button x:Name="btn_Close" Background="#ff5347" Content="&#xF00D;" Margin="1168,10,10,0" VerticalAlignment="Top" Height="22" FontFamily="./assets/#FontAwesome" FontSize="13" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="50"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" >
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
 
         </Grid>
     </Border>

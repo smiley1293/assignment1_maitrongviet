@@ -56,5 +56,21 @@ namespace GUI
                 MessageBox.Show("Something wrong!!!");
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            WelcomeWindow welcomeWindow = new WelcomeWindow();
+            welcomeWindow.Close();
+        }
+
+        private void btn_Logout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            WelcomeWindow welcomeWindow = new WelcomeWindow();
+            welcomeWindow.Close();
+        }
+
+        
     }
 }
